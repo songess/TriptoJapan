@@ -1,0 +1,53 @@
+.main {
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main h1 {
+  font-size: 2rem;
+  line-height: normal;
+  font-weight: 600;
+  color: #333;
+}
+
+.main p {
+  font-size: 1.2rem;
+  line-height: normal;
+  font-weight: 400;
+  color: #333;
+}
+
+.btn {
+  color: white;
+  border-radius: 10px;
+  padding: 15px 25px;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  border-bottom-color: rgba(0, 0, 0, 0.34);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.34) inset,
+    0 2px 0 -1px rgba(0, 0, 0, 0.13), 0 3px 0 -1px rgba(0, 0, 0, 0.08),
+    0 3px 13px -1px rgba(0, 0, 0, 0.21);
+}
+
+.btn.blue {
+  background-color: #7fb1bf;
+}
+.btn.green {
+  background-color: #9abf7f;
+}
+.btn.red {
+  background-color: #fa5a5a;
+}
+.btn.purple {
+  background-color: #cb99c5;
+}
+.btn.cyan {
+  background-color: #7fccde;
+}
+.btn.yellow {
+  background-color: #f0d264;
+}
