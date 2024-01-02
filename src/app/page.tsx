@@ -16,7 +16,7 @@ export default function Home() {
         <button className="btn purple">3일차 (1/7 Sun)</button>
       </Link>
       <Link href="/day4">
-        <button className="btn yellow">4일차 (1/5 Mon)</button>
+        <button className="btn yellow">4일차 (1/8 Mon)</button>
       </Link>
     </main>
   );
