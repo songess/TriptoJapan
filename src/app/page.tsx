@@ -18,6 +18,9 @@ export default function Home() {
       <Link href="/day4">
         <button className="btn yellow">4일차 (1/8 Mon)</button>
       </Link>
+      <Link href="/ticket">
+        <button className="btn blue">티켓 모음</button>
+      </Link>
     </main>
   );
 }
