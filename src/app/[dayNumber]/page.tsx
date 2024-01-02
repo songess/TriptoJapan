@@ -1,5 +1,5 @@
 "use client";
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import MyGoogleMap from "../MyGoogleMap";
 import "./page.css";
 import Td from "./Td";
@@ -64,13 +64,16 @@ export default function Page() {
       schedule = schedule4;
       break;
   }
-  console.log(pathname);
+  const [selectedItemIndex, setSelectedItemIndex] = useState<number>(-1);
+  const clickHandler = (index: number) => {
+    setSelectedItemIndex(index);
+  };
   return (
     <div className="day1wrapper">
       <Link href="/" className="leftSvg">
         <LeftSvg />
       </Link>
-      <MyGoogleMap />
+      <MyGoogleMap selectedIndex={selectedItemIndex} />
       <section className="sectionStyle">
         <p className="pstyle">상세 일정❗️</p>
         <table className="table-fill">
@@ -82,7 +85,14 @@ export default function Page() {
           </thead>
           <tbody className="table-style">
             {schedule.map((item, index) => (
-              <Td key={index} time={item.time} plan={item.plan} />
+              <Td
+                key={index}
+                time={item.time}
+                plan={item.plan}
+                onClick={() => {
+                  clickHandler(index);
+                }}
+              />
             ))}
           </tbody>
         </table>

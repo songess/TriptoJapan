@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useRef, useState,useEffect } from "react";
 import {
   GoogleMap,
   useJsApiLoader,
@@ -18,11 +18,11 @@ const containerStyle = {
 };
 
 const locations1 = [
+  { place: "나리타 공항", lat: 35.77017, lng: 140.38432 },
   { place: "숙소", lat: 35.68077, lng: 139.77995 },
   { place: "후카이도 라멘", lat: 35.67948, lng: 139.78064 },
   { place: "팀랩 플래닛 도쿄", lat: 35.64912, lng: 139.78977 },
   { place: "도쿄 타워", lat: 35.65858, lng: 139.74543 },
-  { place: "소바집", lat: 35.67985, lng: 139.77973 },
 ];
 const locations2 = [
   { place: "숙소", lat: 35.68077, lng: 139.77995 },
@@ -49,6 +49,7 @@ const locations4 = [
   { place: "아사쿠사 멘츠카츠,요헤이", lat: 35.71291, lng: 139.79605 },
   { place: "센소지", lat: 35.71476, lng: 139.79665 },
   { place: "아사쿠사 타코마루, 이모핏피", lat: 35.71412, lng: 139.79447 },
+  { place: "나리타 공항", lat: 35.77017, lng: 140.38432 },
 ];
 
 type Location = {
@@ -57,7 +58,11 @@ type Location = {
   lng: number;
 };
 
-function MyGoogleMap() {
+interface MapProps {
+  selectedIndex: number;
+}
+
+function MyGoogleMap({ selectedIndex }: MapProps) {
   const pathname = usePathname();
   const locaRef = useRef();
   let locations: Location[] = [];
@@ -86,6 +91,7 @@ function MyGoogleMap() {
   const onLoad = useCallback(function callback(map: any) {
     const bounds = new window.google.maps.LatLngBounds();
     locations.forEach((location) => {
+      if(location.place==="나리타 공항") return;
       bounds.extend(new window.google.maps.LatLng(location.lat, location.lng));
     });
     map.fitBounds(bounds);
@@ -96,6 +102,13 @@ function MyGoogleMap() {
   const onUnmount = useCallback(function callback(map: any) {
     setMap(null);
   }, []);
+
+  useEffect(()=>{
+    if(selectedIndex!=-1){
+      map?.setCenter({ lat: locations[selectedIndex].lat, lng: locations[selectedIndex].lng });
+      setShowInfo(selectedIndex);
+    }
+  },[selectedIndex])
 
   return isLoaded ? (
     <GoogleMap
