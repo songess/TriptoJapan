@@ -5,6 +5,7 @@ import "./page.css";
 import Td from "./Td";
 import { useRouter, usePathname } from "next/navigation";
 import LeftSvg from "../assets/arrowLeft.svg";
+import Link from "next/link";
 
 const schedule1 = [
   { time: "15:30", plan: "나리타 공항 도착" },
@@ -66,14 +67,9 @@ export default function Page() {
   console.log(pathname);
   return (
     <div className="day1wrapper">
-      <div
-        className="leftSvg"
-        onClick={() => {
-          router.back();
-        }}
-      >
+      <Link href="/" className="leftSvg">
         <LeftSvg />
-      </div>
+      </Link>
       <MyGoogleMap />
       <section className="sectionStyle">
         <p className="pstyle">상세 일정❗️</p>
