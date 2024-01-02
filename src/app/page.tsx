@@ -9,9 +9,15 @@ export default function Home() {
       <Link href="/day1">
         <button className="btn cyan">1일차 (1/5 Fri)</button>
       </Link>
-      <button className="btn green">2일차 (1/6 Sat)</button>
-      <button className="btn purple">3일차 (1/7 Sun)</button>
-      <button className="btn yellow">4일차 (1/5 Mon)</button>
+      <Link href="/day2">
+        <button className="btn green">2일차 (1/6 Sat)</button>
+      </Link>
+      <Link href="/day3">
+        <button className="btn purple">3일차 (1/7 Sun)</button>
+      </Link>
+      <Link href="/day4">
+        <button className="btn yellow">4일차 (1/5 Mon)</button>
+      </Link>
     </main>
   );
 }
