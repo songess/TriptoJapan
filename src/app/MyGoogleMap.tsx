@@ -10,16 +10,6 @@ const containerStyle = {
   height: "40vh",
 };
 
-const center = {
-  lat: 35.68077,
-  lng: 139.77995,
-};
-
-const OPTIONS = {
-  minZoom: 4,
-  maxZoom: 18,
-};
-
 function MyGoogleMap() {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
@@ -36,7 +26,7 @@ function MyGoogleMap() {
   ];
 
   const onLoad = useCallback(function callback(map: any) {
-    const bounds = new window.google.maps.LatLngBounds(center);
+    const bounds = new window.google.maps.LatLngBounds();
     locations.forEach((location) => {
       bounds.extend(new window.google.maps.LatLng(location.lat, location.lng));
     });
@@ -52,7 +42,6 @@ function MyGoogleMap() {
   return isLoaded ? (
     <GoogleMap
       mapContainerStyle={containerStyle}
-      center={center}
       onLoad={onLoad}
       onUnmount={onUnmount}
       options={{ disableDefaultUI: true }}
@@ -62,7 +51,7 @@ function MyGoogleMap() {
           key={index}
           position={{ lat: location.lat, lng: location.lng }}
           label={location.place}
-          
+
           // onClick={infoHandler}
         />
       ))}

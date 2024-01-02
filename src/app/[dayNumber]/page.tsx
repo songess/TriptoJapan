@@ -4,7 +4,7 @@ import MyGoogleMap from "../MyGoogleMap";
 import "./page.css";
 import Td from "./Td";
 import { useRouter, usePathname } from "next/navigation";
-import LeftSvg from "../assets/ArrowLeft.svg";
+import LeftSvg from "../assets/arrowLeft.svg";
 
 const schedule1 = [
   { time: "15:30", plan: "나리타 공항 도착" },
