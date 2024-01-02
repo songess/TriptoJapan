@@ -47,8 +47,8 @@ type ScheduleItem = {
 
 export default function Page() {
   const router = useRouter();
-  const pathname = usePathname();
   let schedule: ScheduleItem[] = [];
+  const pathname = usePathname();
   switch (pathname) {
     case "/day1":
       schedule = schedule1;
@@ -80,11 +80,11 @@ export default function Page() {
         <table className="table-fill">
           <thead>
             <tr>
-              <th className="text-left">시간</th>
+              <th className="text-left tl">시간</th>
               <th className="text-left">일정</th>
             </tr>
           </thead>
-          <tbody className="table-hover">
+          <tbody className="table-style">
             {schedule.map((item, index) => (
               <Td key={index} time={item.time} plan={item.plan} />
             ))}
