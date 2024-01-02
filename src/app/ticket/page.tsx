@@ -27,6 +27,9 @@ export default function page() {
       >
         비짓 재팬
       </a>
+      <a href="/메트로패스.pdf" className="button btnFade btnBlueGreen">
+        메트로패스
+      </a>
     </div>
   );
 }
