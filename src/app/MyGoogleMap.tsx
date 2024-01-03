@@ -9,7 +9,7 @@ import {
 } from "@react-google-maps/api";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import "./MyGoogleMap.css";
+import "./page.css"
 
 const key = "AIzaSyBRGfQVtpyeaLhZFyQd9k35OYOEoeW17yQ";
 
