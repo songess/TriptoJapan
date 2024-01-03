@@ -140,12 +140,11 @@ td.text-right {
 
 .sectionStyle {
   max-height: 370px;
-  overflow-y: auto;
 }
 
 table tbody {
   display: block;
-  max-height: 270px;
+  max-height: 240px;
   flex-basis: 100px;
   overflow-y: scroll;
 }
