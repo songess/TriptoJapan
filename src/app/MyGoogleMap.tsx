@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useRef, useState,useEffect } from "react";
+import React, { useCallback, useRef, useState, useEffect } from "react";
 import {
   GoogleMap,
   useJsApiLoader,
@@ -92,7 +92,7 @@ function MyGoogleMap({ selectedIndex }: MapProps) {
   const onLoad = useCallback(function callback(map: any) {
     const bounds = new window.google.maps.LatLngBounds();
     locations.forEach((location) => {
-      if(location.place==="나리타 공항") return;
+      if (location.place === "나리타 공항") return;
       bounds.extend(new window.google.maps.LatLng(location.lat, location.lng));
     });
     map.fitBounds(bounds);
@@ -104,12 +104,15 @@ function MyGoogleMap({ selectedIndex }: MapProps) {
     setMap(null);
   }, []);
 
-  useEffect(()=>{
-    if(selectedIndex!=-1){
-      map?.setCenter({ lat: locations[selectedIndex].lat, lng: locations[selectedIndex].lng });
+  useEffect(() => {
+    if (selectedIndex != -1) {
+      map?.setCenter({
+        lat: locations[selectedIndex].lat,
+        lng: locations[selectedIndex].lng,
+      });
       setShowInfo(selectedIndex);
     }
-  },[selectedIndex])
+  }, [selectedIndex]);
 
   return isLoaded ? (
     <GoogleMap
