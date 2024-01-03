@@ -8,9 +8,9 @@ a.button {
   font-weight: 600;
   text-align: center;
   line-height: 50px;
-  color: #FFF;
+  color: #fff;
   border-radius: 5px;
-  transition: all 0.2s ;
+  transition: all 0.2s;
 }
 
 a {
@@ -18,23 +18,40 @@ a {
 }
 
 .btnBlueGreen {
-  background: #00AE68;
+  background: #00ae68;
 }
 
 .btnLightBlue {
-  background: #5DC8CD;
+  background: #5dc8cd;
 }
 
 .btnOrange {
-  background: #FFAA40;
+  background: #ffaa40;
 }
 
 .btnPurple {
-  background: #A74982;
+  background: #a74982;
 }
 
 .twrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
+}
+
+.ticktSet {
+  display: flex;
+  gap: 20px;
+}
+
+.leftSvg {
+  background-color: rgba(256, 256, 256, 0.5);
+  padding: 7px 8px 5px 7px;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+  top: 40px;
+  left: 10px;
 }

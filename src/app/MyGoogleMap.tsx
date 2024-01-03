@@ -9,6 +9,7 @@ import {
 } from "@react-google-maps/api";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import "./MyGoogleMap.css";
 
 const key = "AIzaSyBRGfQVtpyeaLhZFyQd9k35OYOEoeW17yQ";
 
@@ -132,6 +133,7 @@ function MyGoogleMap({ selectedIndex }: MapProps) {
             <InfoWindow position={{ lat: location.lat, lng: location.lng }}>
               <Link
                 href={`https://www.google.com/maps/dir/Current+Location/${location.lat},${location.lng}`}
+                className="infowindowStyle"
               >
                 <p>{location.place}로 가는 방법</p>
               </Link>

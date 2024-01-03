@@ -4,8 +4,15 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="main">
-      <h1>일본 여행✈️</h1>
-      <p>도쿄 3박4일!</p>
+      <a
+        href="https://www.vjw.digital.go.jp/main/#/vjwplo001"
+        className="maina"
+      >
+        일본 여행✈️
+      </a>
+      <a href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EB%8F%84%EC%BF%84+%EB%82%A0%EC%94%A8" className="suba">
+        도쿄 3박4일! 날씨는..?
+      </a>
       <Link href="/day1">
         <button className="btn cyan">1일차 (1/5 Fri)</button>
       </Link>
